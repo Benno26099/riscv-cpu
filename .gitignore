@@ -1,0 +1,56 @@
+# --- Verilator ---
+obj_dir/
+*.vcd
+*.fst
+*.fst.hier
+*.saif
+coverage.dat
+logs/
+
+# --- Build outputs (software) ---
+build/
+*.o
+*.elf
+*.hex
+*.bin
+*.map
+*.dump
+*.lst
+
+# --- Vivado (project-mode and non-project clutter) ---
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.bit
+*.ltx
+*.dcp
+.Xil/
+vivado*.backup.*
+fpga/build/
+fpga/*.cache/
+fpga/*.hw/
+fpga/*.runs/
+fpga/*.sim/
+fpga/*.ip_user_files/
+fpga/*.gen/
+fpga/*.xpr
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+
+# --- Editors / OS ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Claude / tutoring files (kept local, not published) ---
+.claude/
+CLAUDE.md
+HANDOVER.md
