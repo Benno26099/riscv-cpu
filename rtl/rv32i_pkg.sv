@@ -44,4 +44,47 @@ package rv32i_pkg;
         WB_PC4      = 2'b10
     } wb_sel_t;
 
+    // Shared encoding constants: each importing module uses only a subset,
+    // so Verilator's per-module UNUSEDPARAM warning is expected here.
+    /* verilator lint_off UNUSEDPARAM */
+
+    // OPCODES
+    localparam  logic [6:0]
+        OPCODE_LUI    = 7'b0110111,
+        OPCODE_AUIPC  = 7'b0010111,
+        OPCODE_JAL    = 7'b1101111,
+        OPCODE_JALR   = 7'b1100111,
+        OPCODE_BRANCH = 7'b1100011,
+        OPCODE_LOAD   = 7'b0000011,
+        OPCODE_STORE  = 7'b0100011,
+        OPCODE_IMM    = 7'b0010011,
+        OPCODE_ALU    = 7'b0110011,
+        OPCODE_FENCE  = 7'b0001111,
+        OPCODE_SYSTEM = 7'b1110011;
+
+    // funct3 for BRANCH opcode
+    localparam logic [2:0]
+        F3_BEQ  = 3'b000,
+        F3_BNE  = 3'b001,
+        F3_BLT  = 3'b100,
+        F3_BGE  = 3'b101,
+        F3_BLTU = 3'b110,
+        F3_BGEU = 3'b111;
+
+    // funct3 for LOAD opcode
+    localparam logic [2:0]
+        F3_LB   = 3'b000,
+        F3_LH   = 3'b001,
+        F3_LW   = 3'b010,
+        F3_LBU  = 3'b100,
+        F3_LHU  = 3'b101;
+
+    // funct3 for STORE opcode
+    localparam logic [2:0]
+        F3_SB   = 3'b000,
+        F3_SH   = 3'b001,
+        F3_SW   = 3'b010;
+
+    /* verilator lint_on UNUSEDPARAM */
+
 endpackage
